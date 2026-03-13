@@ -12,16 +12,16 @@
   - Query complexa/relatórios
 
 ## Critérios de aceite
-- [ ] Repositórios compilam e são injetáveis
-- [ ] Paginação funciona para listagem
+ - [x] Repositórios compilam e são injetáveis
+ - [x] Paginação funciona para listagem
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir necessidades de filtro/paginação
+ - [x] Definir necessidades de filtro/paginação
 
 ### Implementação
-- [ ] Criar interfaces `JpaRepository`
-- [ ] Criar métodos derivados (ex.: `findByStatus`)
+ - [x] Criar interfaces `JpaRepository`
+ - [x] Criar métodos derivados (ex.: `findByStatus`)
 
 ### Testes
 - [ ] `@DataJpaTest` básico (persistir e buscar)

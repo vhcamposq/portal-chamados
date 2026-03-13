@@ -13,23 +13,23 @@
   - Alterar groupId/artifactId
 
 ## Critérios de aceite
-- [ ] Aplicação sobe sem erros
-- [ ] Testes rodam
-- [ ] Não sobra referência ao package antigo
+ - [x] Aplicação sobe sem erros
+ - [x] Testes rodam
+ - [x] Não sobra referência ao package antigo
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Listar arquivos no package atual (main/test)
+ - [x] Listar arquivos no package atual (main/test)
 
 ### Implementação
-- [ ] Renomear diretórios e `package` statements
-- [ ] Ajustar imports quebrados
+ - [x] Renomear diretórios e `package` statements
+ - [x] Ajustar imports quebrados
 
 ### Testes
-- [ ] Rodar testes
+ - [x] Rodar testes
 
 ### Revisão
-- [ ] Conferir se o IntelliJ reconheceu o refactor corretamente
+ - [x] Conferir se o IntelliJ reconheceu o refactor corretamente
 
 ### Deploy/Entrega
 - [ ] N/A
@@ -38,8 +38,8 @@
 - Fazer via refactor do IDE para evitar inconsistência de pastas.
 
 ## Checklist de PR
-- [ ] Build passa
-- [ ] Testes passam
+ - [x] Build passa
+ - [x] Testes passam
 
 ## Evidências
 - **Comando/saída**:

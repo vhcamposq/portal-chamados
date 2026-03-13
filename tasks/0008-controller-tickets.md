@@ -12,19 +12,19 @@
   - Autenticação
 
 ## Critérios de aceite
-- [ ] `POST /tickets` cria e retorna 201
-- [ ] `GET /tickets` lista com paginação
-- [ ] `GET /tickets/{id}` retorna 200/404
-- [ ] `PUT/PATCH /tickets/{id}` atualiza
-- [ ] `PATCH /tickets/{id}/status` altera status
+ - [x] `POST /tickets` cria e retorna 201
+ - [x] `GET /tickets` lista com paginação
+ - [x] `GET /tickets/{id}` retorna 200/404
+ - [x] `PUT/PATCH /tickets/{id}` atualiza
+ - [x] `PATCH /tickets/{id}/status` altera status
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir contratos de request/response
+ - [x] Definir contratos de request/response
 
 ### Implementação
-- [ ] Implementar controller + injeção do service
-- [ ] Mapear DTOs
+ - [x] Implementar controller + injeção do service
+ - [x] Mapear DTOs
 
 ### Testes
 - [ ] Testes com MockMvc (happy path + erros)

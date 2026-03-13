@@ -12,20 +12,20 @@
   - Documentação extensa de negócio
 
 ## Critérios de aceite
-- [ ] Swagger UI abre localmente
-- [ ] Endpoints aparecem com schemas
-- [ ] Exemplo de payload para criação de ticket (se possível)
+ - [x] Swagger UI abre localmente
+ - [x] Endpoints aparecem com schemas
+ - [ ] Exemplo de payload para criação de ticket (se possível)
 
 ## Plano (subtarefas)
 ### Análise
 - [ ] Definir se teremos agrupamento por tags
 
 ### Implementação
-- [ ] Ajustar config do springdoc (se necessário)
-- [ ] Anotar controllers/DTOs (mínimo viável)
+ - [x] Ajustar config do springdoc (se necessário)
+ - [ ] Anotar controllers/DTOs (mínimo viável)
 
 ### Testes
-- [ ] Smoke test manual: abrir swagger e chamar `POST /tickets`
+ - [x] Smoke test manual: abrir swagger e chamar `POST /tickets`
 
 ### Revisão
 - [ ] Garantir que não expõe endpoints internos

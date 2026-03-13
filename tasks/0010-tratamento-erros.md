@@ -14,23 +14,23 @@
   - Logging estruturado avançado
 
 ## Critérios de aceite
-- [ ] Validações retornam 400 com detalhes
-- [ ] Recurso inexistente retorna 404
-- [ ] Erros têm formato consistente
+ - [x] Validações retornam 400 com detalhes
+ - [x] Recurso inexistente retorna 404
+ - [x] Erros têm formato consistente
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir formato do erro
+ - [x] Definir formato do erro
 
 ### Implementação
-- [ ] Criar classe `ApiError`
-- [ ] Criar `GlobalExceptionHandler`
+ - [x] Criar classe `ApiError`
+ - [x] Criar `GlobalExceptionHandler`
 
 ### Testes
 - [ ] MockMvc cobrindo 400/404
 
 ### Revisão
-- [ ] Revisar mensagens para não vazar stacktrace
+ - [x] Revisar mensagens para não vazar stacktrace
 
 ### Deploy/Entrega
 - [ ] N/A

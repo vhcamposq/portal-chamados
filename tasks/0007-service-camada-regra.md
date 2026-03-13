@@ -13,17 +13,17 @@
   - Autorização por usuário
 
 ## Critérios de aceite
-- [ ] Criação de ticket com defaults
-- [ ] Mudança de status validada (ex.: não permitir pular de OPEN direto para DONE, se decidirmos assim)
-- [ ] Erros retornam exceções de domínio
+ - [x] Criação de ticket com defaults
+ - [ ] Mudança de status validada (ex.: não permitir pular de OPEN direto para DONE, se decidirmos assim)
+ - [ ] Erros retornam exceções de domínio
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir diagrama simples de transições permitidas
+ - [ ] Definir diagrama simples de transições permitidas
 
 ### Implementação
-- [ ] Implementar métodos (create, update, changeStatus, addComment)
-- [ ] Criar exceções (ex.: `ResourceNotFoundException`, `InvalidStatusTransitionException`)
+ - [ ] Implementar métodos (create, update, changeStatus, addComment)
+ - [ ] Criar exceções (ex.: `ResourceNotFoundException`, `InvalidStatusTransitionException`)
 
 ### Testes
 - [ ] Testes unitários do service

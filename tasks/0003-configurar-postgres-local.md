@@ -13,24 +13,24 @@
   - Flyway (pode ser task separada)
 
 ## Critérios de aceite
-- [ ] Aplicação sobe conectando no Postgres local
-- [ ] Entidades JPA criam tabelas (temporariamente via `ddl-auto=update` ou `create`)
-- [ ] Profile `prod` usa variáveis de ambiente (`DATABASE_URL`/JDBC url)
+ - [x] Aplicação sobe conectando no Postgres local
+ - [ ] Entidades JPA criam tabelas (temporariamente via `ddl-auto=update` ou `create`)
+ - [x] Profile `prod` usa variáveis de ambiente (`DATABASE_URL`/JDBC url)
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir padrão de config local vs prod
+ - [x] Definir padrão de config local vs prod
 
 ### Implementação
-- [ ] Adicionar `spring.datasource.*`
-- [ ] Adicionar `spring.jpa.*`
-- [ ] Criar `application-prod.properties`
+ - [x] Adicionar `spring.datasource.*`
+ - [x] Adicionar `spring.jpa.*`
+ - [x] Criar `application-prod.properties`
 
 ### Testes
-- [ ] Subir app local e validar conexão
+ - [x] Subir app local e validar conexão
 
 ### Revisão
-- [ ] Garantir que não há credenciais hardcoded para prod
+ - [x] Garantir que não há credenciais hardcoded para prod
 
 ### Deploy/Entrega
 - [ ] N/A
@@ -39,8 +39,8 @@
 - No Heroku, preferir variáveis de ambiente e `SPRING_PROFILES_ACTIVE=prod`.
 
 ## Checklist de PR
-- [ ] Build passa
-- [ ] Sem segredos no repositório
+ - [x] Build passa
+ - [x] Sem segredos no repositório
 
 ## Evidências
 - **Comando/saída**:

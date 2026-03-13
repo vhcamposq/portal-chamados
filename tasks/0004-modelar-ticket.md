@@ -13,25 +13,25 @@
   - Comentários/histórico (task separada)
 
 ## Critérios de aceite
-- [ ] Entidade persistível com JPA
-- [ ] DTOs com validações (`@NotBlank`, `@NotNull`, `@Size`)
-- [ ] Campos mínimos definidos (título, descrição, status, prioridade, categoria, createdAt/updatedAt)
+ - [x] Entidade persistível com JPA
+ - [x] DTOs com validações (`@NotBlank`, `@NotNull`, `@Size`)
+ - [x] Campos mínimos definidos (título, descrição, status, prioridade, categoria, createdAt/updatedAt)
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir campos obrigatórios e defaults
+ - [x] Definir campos obrigatórios e defaults
 
 ### Implementação
-- [ ] Criar enums
-- [ ] Criar entidade `Ticket`
-- [ ] Criar DTOs
-- [ ] Definir mapper simples (manual) para Response
+ - [x] Criar enums
+ - [x] Criar entidade `Ticket`
+ - [x] Criar DTOs
+ - [x] Definir mapper simples (manual) para Response
 
 ### Testes
 - [ ] Testar validações (unitário de DTO opcional)
 
 ### Revisão
-- [ ] Revisar nomes/colunas e nulabilidade
+ - [x] Revisar nomes/colunas e nulabilidade
 
 ### Deploy/Entrega
 - [ ] N/A
@@ -40,7 +40,7 @@
 - Status default: `OPEN`.
 
 ## Checklist de PR
-- [ ] Build passa
+ - [x] Build passa
 
 ## Evidências
 - **Comando/saída**:
