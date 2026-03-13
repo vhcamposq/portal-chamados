@@ -12,13 +12,13 @@
   - Deploy automático
 
 ## Critérios de aceite
-- [ ] Pipeline roda em PR/push
-- [ ] Falhas de teste quebram o build
+ - [ ] Pipeline roda em PR/push
+ - [ ] Falhas de teste quebram o build
 
 ## Plano (subtarefas)
 ### Implementação
-- [ ] Criar `.github/workflows/ci.yml`
-- [ ] Configurar Java 21
+ - [x] Criar `.github/workflows/ci.yml`
+ - [x] Configurar Java 21
 
 ### Testes
 - [ ] Abrir PR e validar execução
