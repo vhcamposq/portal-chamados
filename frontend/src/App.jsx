@@ -1,121 +1,183 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import './App.css';
+import { createTicket, getTicket, listTickets, updateTicket } from './api';
+import TicketDetails from './components/TicketDetails';
+import TicketForm from './components/TicketForm';
+import TicketList from './components/TicketList';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [filters, setFilters] = useState({ status: '', priority: '', category: '' });
+  const [page, setPage] = useState(0);
+
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const [view, setView] = useState('list');
+  const [selectedId, setSelectedId] = useState(null);
+  const [selectedTicket, setSelectedTicket] = useState(null);
+  const [loadingTicket, setLoadingTicket] = useState(false);
+  const [ticketError, setTicketError] = useState('');
+
+  const title = useMemo(() => {
+    if (view === 'create') return 'Novo ticket';
+    if (view === 'edit') return `Editar ticket #${selectedId}`;
+    if (view === 'details') return `Ticket #${selectedId}`;
+    return 'Portal de Chamados';
+  }, [view, selectedId]);
+
+  const load = useCallback(async () => {
+    setError('');
+    setLoading(true);
+    try {
+      const result = await listTickets({ page, size: 20, ...filters });
+      setData(result);
+    } catch (err) {
+      setError(err?.message || 'Erro ao carregar tickets');
+    } finally {
+      setLoading(false);
+    }
+  }, [filters, page]);
+
+  useEffect(() => {
+    if (view === 'list') load();
+  }, [load, view]);
+
+  const loadTicket = useCallback(async (id) => {
+    setTicketError('');
+    setLoadingTicket(true);
+    try {
+      const t = await getTicket(id);
+      setSelectedTicket(t);
+    } catch (err) {
+      setTicketError(err?.message || 'Erro ao carregar ticket');
+    } finally {
+      setLoadingTicket(false);
+    }
+  }, []);
+
+  async function openDetails(id) {
+    setSelectedId(id);
+    setView('details');
+    await loadTicket(id);
+  }
+
+  function openCreate() {
+    setSelectedId(null);
+    setSelectedTicket(null);
+    setView('create');
+  }
+
+  function openEdit() {
+    setView('edit');
+  }
+
+  async function refreshSelected() {
+    if (!selectedId) return;
+    await loadTicket(selectedId);
+  }
+
+  async function handleCreate(payload) {
+    const created = await createTicket(payload);
+    setView('details');
+    setSelectedId(created.id);
+    setSelectedTicket(created);
+  }
+
+  async function handleUpdate(payload) {
+    const updated = await updateTicket(selectedId, payload);
+    setView('details');
+    setSelectedTicket(updated);
+  }
+
+  const totalPages = data?.totalPages ?? 0;
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+    <div className="app">
+      <header className="topbar">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+          <div className="brand">Portal de Chamados</div>
+          <div className="muted">{title}</div>
         </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="muted small">
+          API: {import.meta.env.VITE_API_URL || 'http://localhost:8080'}
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <main className="main">
+        {view === 'list' ? (
+          <>
+            <TicketList
+              data={data}
+              loading={loading}
+              error={error}
+              filters={filters}
+              onFiltersChange={(f) => {
+                setPage(0);
+                setFilters(f);
+              }}
+              onSelect={openDetails}
+              onCreate={openCreate}
+            />
+
+            <div className="pager">
+              <button className="btn btnGhost" disabled={page <= 0} onClick={() => setPage((p) => Math.max(0, p - 1))}>
+                Anterior
+              </button>
+              <div className="muted">
+                Página {page + 1} {totalPages ? `de ${totalPages}` : ''}
+              </div>
+              <button
+                className="btn btnGhost"
+                disabled={totalPages === 0 || page >= totalPages - 1}
+                onClick={() => setPage((p) => p + 1)}
+              >
+                Próxima
+              </button>
+            </div>
+          </>
+        ) : null}
+
+        {view === 'create' ? (
+          <TicketForm submitLabel="Criar ticket" onCancel={() => setView('list')} onSubmit={handleCreate} />
+        ) : null}
+
+        {view === 'edit' ? (
+          <TicketForm
+            submitLabel="Salvar alterações"
+            initialValue={selectedTicket}
+            onCancel={() => setView('details')}
+            onSubmit={handleUpdate}
+          />
+        ) : null}
+
+        {view === 'details' ? (
+          <>
+            {ticketError ? <div className="alert alertError">{ticketError}</div> : null}
+            {loadingTicket || !selectedTicket ? (
+              <div className="card"><div className="muted">Carregando ticket...</div></div>
+            ) : (
+              <TicketDetails
+                ticket={selectedTicket}
+                onBack={() => {
+                  setView('list');
+                  load();
+                }}
+                onEdit={openEdit}
+                onRefresh={refreshSelected}
+              />
+            )}
+          </>
+        ) : null}
+      </main>
+
+      <footer className="footer">
+        <div className="muted small">
+          Dica: crie um arquivo <code>frontend/.env</code> com <code>VITE_API_URL</code> apontando para seu backend.
+        </div>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
