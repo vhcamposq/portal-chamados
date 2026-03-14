@@ -15,18 +15,18 @@
 ## Critérios de aceite
  - [x] Criação de ticket com defaults
  - [ ] Mudança de status validada (ex.: não permitir pular de OPEN direto para DONE, se decidirmos assim)
- - [ ] Erros retornam exceções de domínio
+ - [x] Erros retornam exceções de domínio
 
 ## Plano (subtarefas)
 ### Análise
  - [ ] Definir diagrama simples de transições permitidas
 
 ### Implementação
- - [ ] Implementar métodos (create, update, changeStatus, addComment)
+ - [x] Implementar métodos (create, update, changeStatus, addComment)
  - [ ] Criar exceções (ex.: `ResourceNotFoundException`, `InvalidStatusTransitionException`)
 
 ### Testes
-- [ ] Testes unitários do service
+ - [x] Testes unitários do service
 
 ### Revisão
 - [ ] Garantir mensagens claras de erro

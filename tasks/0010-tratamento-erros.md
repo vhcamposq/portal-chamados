@@ -27,7 +27,7 @@
  - [x] Criar `GlobalExceptionHandler`
 
 ### Testes
-- [ ] MockMvc cobrindo 400/404
+ - [x] MockMvc cobrindo 400/404
 
 ### Revisão
  - [x] Revisar mensagens para não vazar stacktrace

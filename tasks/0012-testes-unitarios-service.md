@@ -11,22 +11,22 @@
   - Integração com banco real
 
 ## Critérios de aceite
-- [ ] Cobrir criação e defaults
-- [ ] Cobrir mudança de status (válida e inválida)
-- [ ] Cobrir not found
+ - [x] Cobrir criação e defaults
+ - [ ] Cobrir mudança de status (válida e inválida)
+ - [x] Cobrir not found
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir cenários mínimos
+ - [x] Definir cenários mínimos
 
 ### Implementação
-- [ ] Criar testes com JUnit + Mockito (se aplicável)
+ - [x] Criar testes com JUnit + Mockito (se aplicável)
 
 ### Testes
-- [ ] Rodar suíte local
+ - [x] Rodar suíte local
 
 ### Revisão
-- [ ] Garantir testes determinísticos
+ - [x] Garantir testes determinísticos
 
 ### Deploy/Entrega
 - [ ] N/A

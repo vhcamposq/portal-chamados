@@ -18,19 +18,19 @@
   - IA (pós-MVP)
 
 ## Critérios de aceite
-- [ ] Lista de entidades definida (Ticket, Comment/TimelineEvent)
-- [ ] Lista de endpoints definida
-- [ ] Regras de negócio mínimas definidas (transições de status, campos obrigatórios)
-- [ ] Fora de escopo registrado
+ - [x] Lista de entidades definida (Ticket, Comment/TimelineEvent)
+ - [x] Lista de endpoints definida
+ - [ ] Regras de negócio mínimas definidas (transições de status, campos obrigatórios)
+ - [x] Fora de escopo registrado
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir campos do `Ticket`
-- [ ] Definir enums (status, prioridade, categoria)
-- [ ] Definir campos do comentário/histórico
+ - [x] Definir campos do `Ticket`
+ - [x] Definir enums (status, prioridade, categoria)
+ - [x] Definir campos do comentário/histórico
 
 ### Implementação
-- [ ] Criar documento com endpoints e exemplos de payload
+ - [ ] Criar documento com endpoints e exemplos de payload
 
 ### Testes
 - [ ] N/A (definição)

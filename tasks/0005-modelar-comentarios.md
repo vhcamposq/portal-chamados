@@ -13,17 +13,17 @@
   - Menções, anexos, rich text
 
 ## Critérios de aceite
-- [ ] Comentário persistido com referência ao `Ticket`
-- [ ] Ordenação por data consistente
-- [ ] Response do ticket pode incluir comentários (ou endpoint separado)
+ - [x] Comentário persistido com referência ao `Ticket`
+ - [x] Ordenação por data consistente
+ - [x] Response do ticket pode incluir comentários (ou endpoint separado)
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir campos (mensagem, autor opcional, createdAt)
+ - [x] Definir campos (mensagem, autor opcional, createdAt)
 
 ### Implementação
-- [ ] Criar entidade + repository
-- [ ] Criar DTOs
+ - [x] Criar entidade + repository
+ - [x] Criar DTOs
 
 ### Testes
 - [ ] Teste de persistência básico
@@ -38,7 +38,7 @@
 - Para MVP, `author` pode ser apenas string.
 
 ## Checklist de PR
-- [ ] Build passa
+ - [x] Build passa
 
 ## Evidências
 - **Comando/saída**:

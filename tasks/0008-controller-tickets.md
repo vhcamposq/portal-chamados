@@ -27,7 +27,7 @@
  - [x] Mapear DTOs
 
 ### Testes
-- [ ] Testes com MockMvc (happy path + erros)
+ - [x] Testes com MockMvc (happy path + erros)
 
 ### Revisão
 - [ ] Garantir mensagens e códigos consistentes

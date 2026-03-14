@@ -11,16 +11,16 @@
   - Testes end-to-end
 
 ## Critérios de aceite
-- [ ] `POST /tickets` retorna 201
-- [ ] Erro de validação retorna 400
-- [ ] `GET /tickets/{id}` inexistente retorna 404
+ - [x] `POST /tickets` retorna 201
+ - [x] Erro de validação retorna 400
+ - [x] `GET /tickets/{id}` inexistente retorna 404
 
 ## Plano (subtarefas)
 ### Implementação
-- [ ] Criar `@WebMvcTest` + mocks do service
+ - [x] Criar `@WebMvcTest` + mocks do service
 
 ### Testes
-- [ ] Rodar testes local
+ - [x] Rodar testes local
 
 ## Evidências
 - **Comando/saída**:

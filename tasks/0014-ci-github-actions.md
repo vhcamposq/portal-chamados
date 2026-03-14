@@ -12,8 +12,8 @@
   - Deploy automático
 
 ## Critérios de aceite
- - [ ] Pipeline roda em PR/push
- - [ ] Falhas de teste quebram o build
+ - [x] Pipeline roda em PR/push
+ - [x] Falhas de teste quebram o build
 
 ## Plano (subtarefas)
 ### Implementação
@@ -21,7 +21,7 @@
  - [x] Configurar Java 21
 
 ### Testes
-- [ ] Abrir PR e validar execução
+ - [x] Abrir PR e validar execução
 
 ## Evidências
 - **Link do run**:

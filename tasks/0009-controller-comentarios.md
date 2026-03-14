@@ -11,18 +11,18 @@
   - Edição/remoção de comentário
 
 ## Critérios de aceite
-- [ ] Comentário criado e vinculado ao ticket
-- [ ] Listagem ordenada por data
+ - [x] Comentário criado e vinculado ao ticket
+ - [x] Listagem ordenada por data
 
 ## Plano (subtarefas)
 ### Análise
-- [ ] Definir se comentários vêm embutidos no `GET /tickets/{id}` ou endpoint próprio
+ - [x] Definir se comentários vêm embutidos no `GET /tickets/{id}` ou endpoint próprio
 
 ### Implementação
-- [ ] Implementar endpoints
+ - [x] Implementar endpoints
 
 ### Testes
-- [ ] MockMvc cobrindo 201/404
+ - [x] MockMvc cobrindo 201/404
 
 ### Revisão
 - [ ] Validar payload e limitações

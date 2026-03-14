@@ -14,7 +14,7 @@
 
 ## Critérios de aceite
  - [x] Aplicação sobe conectando no Postgres local
- - [ ] Entidades JPA criam tabelas (temporariamente via `ddl-auto=update` ou `create`)
+ - [x] Entidades JPA criam tabelas (temporariamente via `ddl-auto=update` ou `create`)
  - [x] Profile `prod` usa variáveis de ambiente (`DATABASE_URL`/JDBC url)
 
 ## Plano (subtarefas)
