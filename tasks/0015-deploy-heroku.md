@@ -6,7 +6,7 @@
 ## Escopo
 - **Inclui**:
   - Criar app no Heroku
-  - Provisionar Heroku Postgres
+  - Rodar em `prod` sem Postgres (H2 em memória)
   - Configurar `SPRING_PROFILES_ACTIVE=prod`
   - Ajustar porta/healthcheck se necessário
 - **Não inclui**:
@@ -14,7 +14,7 @@
 
 ## Critérios de aceite
 - [ ] App responde no domínio do Heroku
-- [ ] Conecta no Postgres do Heroku
+- [ ] App sobe sem Postgres (H2 em memória) (dados não persistem)
 - [ ] Swagger abre em produção
 - [ ] `GET /actuator/health` retorna UP
 
@@ -24,7 +24,8 @@
 - [x] Garantir porta dinâmica (`server.port=${PORT:8080}`)
 - [x] Fixar Java 21 para Heroku (`system.properties`)
 - [x] Adicionar `Procfile` (comando de start)
-- [ ] Criar app e add-on Postgres
+- [x] Ajustar `prod` para fallback em H2 (sem custo)
+- [ ] Criar app no Heroku
 - [ ] Configurar variáveis de ambiente
 - [ ] Deploy via Git
 
