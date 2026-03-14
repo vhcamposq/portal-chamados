@@ -23,6 +23,7 @@
 - [x] Preparar config `prod`
 - [x] Garantir porta dinâmica (`server.port=${PORT:8080}`)
 - [x] Fixar Java 21 para Heroku (`system.properties`)
+- [x] Adicionar `Procfile` (comando de start)
 - [ ] Criar app e add-on Postgres
 - [ ] Configurar variáveis de ambiente
 - [ ] Deploy via Git
