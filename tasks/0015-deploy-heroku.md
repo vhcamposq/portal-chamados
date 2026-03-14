@@ -13,10 +13,10 @@
   - Pipeline staging/prod
 
 ## Critérios de aceite
-- [ ] App responde no domínio do Heroku
-- [ ] App sobe sem Postgres (H2 em memória) (dados não persistem)
-- [ ] Swagger abre em produção
-- [ ] `GET /actuator/health` retorna UP
+- [x] App responde no domínio do Heroku
+- [x] App sobe sem Postgres (H2 em memória) (dados não persistem)
+- [x] Swagger abre em produção
+- [x] `GET /actuator/health` retorna UP
 
 ## Plano (subtarefas)
 ### Implementação
@@ -25,13 +25,13 @@
 - [x] Fixar Java 21 para Heroku (`system.properties`)
 - [x] Adicionar `Procfile` (comando de start)
 - [x] Ajustar `prod` para fallback em H2 (sem custo)
-- [ ] Criar app no Heroku
-- [ ] Configurar variáveis de ambiente
-- [ ] Deploy via Git
+- [x] Criar app no Heroku
+- [x] Configurar variáveis de ambiente
+- [x] Deploy via Git
 
 ### Testes
-- [ ] Smoke test em produção
+- [x] Smoke test em produção
 
 ## Evidências
-- **URL produção**:
-- **Swagger URL**:
+- **URL produção**: https://portal-chamados-vhcamposq-eb600894b845.herokuapp.com/
+- **Swagger URL**: https://portal-chamados-vhcamposq-eb600894b845.herokuapp.com/swagger
